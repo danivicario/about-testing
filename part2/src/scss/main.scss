@@ -1,3 +1,33 @@
+html,
+body {
+  box-sizing: content-box;
+}
+
+.App {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.login {
+  align-items: center;
+  background: #ccc;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  width: 20rem;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
 .flag {
   align-items: center;
   display: inline-flex;

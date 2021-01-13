@@ -33,13 +33,13 @@ const Flag: FunctionComponent<FlagProps> = ({
     <div className="flag">
       {mode === FlagModes.countryNameAfter && (
         <Fragment>
-          <img src={src} /> {country}
+          <img src={src} alt={country} /> <span>{country}</span>
         </Fragment>
       )}
 
       {mode === FlagModes.countryNameBefore && (
         <Fragment>
-          {country} <img src={src} />
+          <span>{country}</span> <img src={src} alt={country} />
         </Fragment>
       )}
     </div>
