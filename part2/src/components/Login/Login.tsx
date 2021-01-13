@@ -1,10 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { ChangeEvent, FunctionComponent, useState } from "react";
+import React, { ChangeEvent, FunctionComponent, useEffect, useState } from "react";
 import { Alert, Button, Form, Row } from "react-bootstrap";
 import "../../scss/main.scss";
+import { Username } from "../App/App";
 import Flag, { FlagModes } from "../Flag/Flag";
 
-const Login: FunctionComponent = () => {
+interface LoginProps {
+  onUsernameChange: (username: Username) => void;
+  onLogin: (loggedIn: boolean) => void;
+}
+
+const Login: FunctionComponent<LoginProps> = ({ onUsernameChange, onLogin }: LoginProps) => {
   let [userName, setUsername] = useState<string>("");
   let [password, setPassword] = useState<string>("");
   let [error1, setError1] = useState<string | null>(null);
@@ -14,19 +20,31 @@ const Login: FunctionComponent = () => {
   function login() {
     if (userName.length === 0) {
       setError1("Username too short");
+      onLogin(false);
+      return;
     }
 
     if (password.length === 0) {
       setError2("Password too short");
+      onLogin(false);
+      return;
     }
+
+    onLogin(true);
   }
+
+  useEffect(() => {
+    userName.length > 0 ? onUsernameChange(userName) : onUsernameChange(undefined);
+  }, [userName]);
 
   return (
     <div className="login">
       <Form.Control
         type="text"
         placeholder="Enter email"
-        onChange={(e: ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => {
+          setUsername(e.target.value);
+        }}
         value={userName}
       />
       {error1 && (
