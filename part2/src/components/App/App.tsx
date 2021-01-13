@@ -1,13 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { Route, Switch, useLocation } from "react-router-dom";
 import "../../scss/main.scss";
-import Flag from "../Flag/Flag";
+import Flag, { FlagModes } from "../Flag/Flag";
 
 function App() {
   return (
     <div className="App">
-      <Flag />
+      {Array(500)
+        .fill(0)
+        .map((_: any, idx: number) => (
+          <Flag country={idx % 2 === 0 ? "EN" : "ES"} mode={FlagModes.countryNameAfter} />
+        ))}
     </div>
   );
 }

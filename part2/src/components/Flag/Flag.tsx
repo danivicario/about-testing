@@ -1,38 +1,49 @@
-import React, { FunctionComponent } from "react";
-import ReactTooltip from "react-tooltip";
-
-import FlagProps, { FlagModes } from "./FlagProps";
-import ARFlag from "./img/AR.svg";
-import DEFlag from "./img/DE.svg";
+import React, { Fragment, FunctionComponent } from "react";
 import ENFlag from "./img/EN.svg";
 import ESFlag from "./img/ES.svg";
-import FRFlag from "./img/FR.svg";
-import IDFlag from "./img/ID.svg";
-import ITFlag from "./img/IT.svg";
-import JAFlag from "./img/JA.svg";
-import KOFlag from "./img/KO.svg";
-import PLFlag from "./img/PL.svg";
-import PTFlag from "./img/PT.svg";
-import RUFlag from "./img/RU.svg";
-import TRFlag from "./img/TR.svg";
-import VIFlag from "./img/VI.svg";
-import ZHFlag from "./img/ZH.svg";
 
 export enum FlagModes {
-  before = "BEFORE",
-  after = "AFTER"
+  countryNameBefore = "BEFORE",
+  countryNameAfter = "AFTER"
 }
 
-export default interface FlagProps {
-  countries: string | string[];
-  mode?: FlagModes;
-  onClick?: Function;
-  className?: string;
-  tipPlacement?: "top" | "bottom" | undefined;
+export interface FlagProps {
+  country: "EN" | "ES";
+  mode: FlagModes;
 }
 
-const Flag: FunctionComponent<FlagProps> = ({ country }: FlagProps) => {
-  return <div>hola</div>;
+const Flag: FunctionComponent<FlagProps> = ({
+  country,
+  mode = FlagModes.countryNameAfter
+}: FlagProps) => {
+  let src: string;
+
+  switch (country) {
+    case "ES": {
+      src = ESFlag;
+      break;
+    }
+
+    case "EN": {
+      src = ENFlag;
+      break;
+    }
+  }
+  return (
+    <div className="flag">
+      {mode === FlagModes.countryNameAfter && (
+        <Fragment>
+          <img src={src} /> {country}
+        </Fragment>
+      )}
+
+      {mode === FlagModes.countryNameBefore && (
+        <Fragment>
+          {country} <img src={src} />
+        </Fragment>
+      )}
+    </div>
+  );
 };
 
 export default Flag;
