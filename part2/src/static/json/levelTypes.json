@@ -1,0 +1,21 @@
+[
+  { "code": "1", "name": "a1" },
+  { "code": "2", "name": "a2" },
+  { "code": "3", "name": "b1" },
+  { "code": "4", "name": "b2" },
+  { "code": "5", "name": "c_1_special_courses" },
+  { "code": "6", "name": "c2_special_courses" },
+  { "code": "7", "name": "travel" },
+  { "code": "8", "name": "fashion_retail" },
+  { "code": "9", "name": "uber" },
+  { "code": "10", "name": "nyt" },
+  { "code": "11", "name": "business" },
+  { "code": "12", "name": "economist" },
+  { "code": "13", "name": "pronunciation" },
+  { "code": "14", "name": "inditex" },
+  { "code": "15", "name": "london_central" },
+  { "code": "16", "name": "specialist_vocabulary" },
+  { "code": "17", "name": "adidas_1" },
+  { "code": "18", "name": "adidas_2" },
+  { "code": "19", "name": "adidas_3" }
+]

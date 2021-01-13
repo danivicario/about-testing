@@ -1,0 +1,11 @@
+[
+  { "name": "Lesson Id", "code": "1" },
+  { "name": "Unit Id", "code": "2" },
+  { "name": "Activity Id", "code": "3" },
+  { "name": "Exercise Id", "code": "4" },
+  { "name": "Entity Id", "code": "5" },
+  { "name": "Entity Phrase", "code": "6" },
+  { "name": "Entity Keyphrase", "code": "7" },
+  { "name": "String Id", "code": "8" },
+  { "name": "String Value", "code": "9" }
+]

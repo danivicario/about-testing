@@ -1,0 +1,14 @@
+[
+  { "name": "Arabic", "code": "AR" },
+  { "name": "Chinese", "code": "ZH" },
+  { "name": "English", "code": "EN" },
+  { "name": "French", "code": "FR" },
+  { "name": "German", "code": "DE" },
+  { "name": "Italian", "code": "IT" },
+  { "name": "Japanese", "code": "JA" },
+  { "name": "Portuguese", "code": "PT" },
+  { "name": "Polish", "code": "PL" },
+  { "name": "Russian", "code": "RU" },
+  { "name": "Spanish", "code": "ES" },
+  { "name": "Turkish", "code": "TR" }
+]
