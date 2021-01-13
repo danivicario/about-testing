@@ -10,11 +10,13 @@ export enum FlagModes {
 export interface FlagProps {
   country: "EN" | "ES";
   mode: FlagModes;
+  onClick?: () => void;
 }
 
 const Flag: FunctionComponent<FlagProps> = ({
   country,
-  mode = FlagModes.countryNameAfter
+  mode = FlagModes.countryNameAfter,
+  onClick
 }: FlagProps) => {
   let src: string;
 
@@ -30,7 +32,7 @@ const Flag: FunctionComponent<FlagProps> = ({
     }
   }
   return (
-    <div className="flag">
+    <div className="flag" onClick={onClick}>
       {mode === FlagModes.countryNameAfter && (
         <Fragment>
           <img src={src} alt={country} /> <span>{country}</span>
