@@ -54,8 +54,7 @@
       "!src/serviceWorker.{ts,js}",
       "!src/index.ts",
       "!src/unit-tests/**/*",
-      "!src/sagas/**",
-      "!src/unit-tests/sagas/sagas.test.js"
+      "!src/index.js"
     ]
   }
 }
