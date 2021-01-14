@@ -43,6 +43,7 @@ const Login: FunctionComponent<LoginProps> = ({ onUsernameChange, onLogin }: Log
         type="text"
         placeholder="Enter email"
         className="login__username"
+        id="username"
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setUsername(e.target.value);
         }}
@@ -50,7 +51,7 @@ const Login: FunctionComponent<LoginProps> = ({ onUsernameChange, onLogin }: Log
       />
       {error1 && (
         <Alert variant="danger" dismissible onClose={() => setError1(null)}>
-          {error1}
+          <span className="login__error1">{error1}</span>
         </Alert>
       )}
 
@@ -73,7 +74,9 @@ const Login: FunctionComponent<LoginProps> = ({ onUsernameChange, onLogin }: Log
             userLanguage === "EN" ? setUserLanguage("ES") : setUserLanguage("EN");
           }}
         />
-        <Button onClick={() => login()}>Login</Button>
+        <Button onClick={() => login()} className="login__login-btn">
+          Login
+        </Button>
       </Row>
     </div>
   );
