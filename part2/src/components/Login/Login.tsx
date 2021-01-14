@@ -35,13 +35,14 @@ const Login: FunctionComponent<LoginProps> = ({ onUsernameChange, onLogin }: Log
 
   useEffect(() => {
     userName.length > 0 ? onUsernameChange(userName) : onUsernameChange(undefined);
-  }, [userName]);
+  }, [userName, onUsernameChange]);
 
   return (
     <div className="login">
       <Form.Control
         type="text"
         placeholder="Enter email"
+        className="login__username"
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setUsername(e.target.value);
         }}
@@ -55,6 +56,7 @@ const Login: FunctionComponent<LoginProps> = ({ onUsernameChange, onLogin }: Log
 
       <Form.Control
         type="password"
+        className="login__password"
         placeholder="Enter password"
         onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
       />
