@@ -24,5 +24,6 @@ describe("<Login />", () => {
 
     expect(componentRef.find(".alert").length).toBe(1);
     expect(x.mock.calls[1][0]).toBe("Hello");
+    expect(x.mock.calls[1][0]).toBe("Hello");
   });
 });
