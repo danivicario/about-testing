@@ -10,21 +10,25 @@ describe("<Login />", () => {
   let componentRef;
 
   it("onLogin must be called when login happens", () => {
-    let x = jest.fn();
-    let y = jest.fn();
+    let spy1 = jest.fn();
+    let spy2 = jest.fn();
 
-    wrapper = mount(<Login onUsernameChange={x} onLogin={y} />);
+    wrapper = mount(<Login onUsernameChange={spy1} onLogin={spy2} />);
 
     componentRef = wrapper.find("Login");
 
-    componentRef.find("input.login__username").simulate("change", { target: { value: "Hello" } });
+    // console.log(componentRef.debug());
+
+    componentRef.find("input.login__username").simulate("change", { target: { value: "Raquel" } });
+
     componentRef.find("button.login__login-btn").simulate("click");
 
     componentRef = wrapper.find("Login");
 
     expect(componentRef.find(".alert").length).toBe(1);
-    expect(x.mock.calls[1][0]).toBe("Hello");
-    expect(x.mock.calls[1][0]).toBe("Hello");
-    expect(x.mock.calls[1][0]).toBe("Hello");
+
+    // console.log(spy1.mock.calls);
+
+    expect(spy1.mock.calls[1][0]).toBe("Raquel");
   });
 });
