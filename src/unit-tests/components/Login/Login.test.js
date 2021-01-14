@@ -29,6 +29,6 @@ describe("<Login />", () => {
 
     // console.log(spy1.mock.calls);
 
-    expect(spy1.mock.calls[1][0]).toBe("Raquel");
+    expect(spy1.mock.calls[1][0]).toBe("Raquel2");
   });
 });
